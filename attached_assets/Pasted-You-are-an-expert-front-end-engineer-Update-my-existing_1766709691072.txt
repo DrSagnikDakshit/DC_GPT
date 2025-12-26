@@ -1,0 +1,56 @@
+You are an expert front-end engineer. Update my existing Home screen to match the following D-COUTURE layout and behavior. Keep the rest of the project unchanged.
+
+GOAL: Luxury, editorial, minimal “almost empty” home screen with a subtle top bar, centered manifesto text, and a bottom CTA that toggles into two options.
+
+REQUIREMENTS (UI)
+1) Top bar (always visible)
+- Left: “D-COUTURE” in small caps (or visually small uppercase) with subtle letter spacing.
+- Right: a simple profile dot (a small filled circle). No icon inside.
+
+2) Main canvas (almost empty)
+- Centered vertically and horizontally:
+  - Large text: “D-COUTURE” (ALL CAPS, wide letter spacing)
+  - Subtext (two lines, keep line break):
+    “Style is not about following trends—
+    it’s about knowing yourself”
+  - Philosophy marker (two lines, subtle, below subtext):
+    “Identity over Trends
+     Structure over Chaos”
+
+3) Bottom action area (two states)
+STATE A (default):
+- Single bottom button: “Begin Experience”
+
+STATE B (after clicking “Begin Experience”):
+- Replace the single button with two stacked buttons:
+  - Primary: “Enter Your Wardrobe”
+  - Secondary: “Curate Today’s Look”
+
+IMPORTANT BEHAVIOR
+- Clicking “Begin Experience” must NOT navigate or change the page.
+- The background + top bar + centered text must stay exactly the same.
+- Only the bottom action area changes from STATE A to STATE B.
+- Add a subtle transition (fade/slide) ONLY for the button swap, not the whole page.
+- No scrolling on this screen; it should fit full viewport height and respect mobile safe areas.
+
+STYLING
+- Mobile-first PWA look. Clean, couture-grade.
+- Choose ONE of these backgrounds:
+  Option 1: near-black (#0B0B0B) with off-white text
+  Option 2: warm off-white (#F6F4F1) with near-black text
+Pick whichever matches the existing theme best.
+- Avoid gradients, busy shadows, imagery, carousels.
+- Use generous spacing, calm typography, slightly muted subtext/marker (reduced opacity).
+- Buttons should be full-width, rounded, subtle (thin border or muted fill). No icons.
+
+IMPLEMENTATION DETAILS
+- Implement this as a state toggle in the Home component (e.g., useState).
+- Keep any existing routing intact; do not add new routes.
+- Wire the two new buttons to placeholder handlers for now (e.g., console.log or TODO comments), but DO NOT remove existing logic—just adapt it so future navigation can be added later.
+- Make sure it works on iPhone-sized screens and desktop (centered, responsive).
+
+DELIVERABLE
+- Modify the existing Home screen file(s) accordingly and show me the updated code.
+- If you need to create small reusable components (e.g., TopBar), do so locally in the same folder.
+
+Now implement these changes.

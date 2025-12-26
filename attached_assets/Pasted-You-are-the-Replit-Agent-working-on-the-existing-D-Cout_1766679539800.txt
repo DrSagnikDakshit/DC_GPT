@@ -1,0 +1,66 @@
+You are the Replit Agent working on the existing D-Couture MVP codebase. The app already has working functionality (backend + database + garment CRUD + wardrobe graph/scoring + Today’s Couture generation + feedback + explanation layer). Your task is to REDO THE UI to match the Lovable screenshots I will provide, while keeping ALL existing functionality intact.
+
+ABSOLUTE RULES:
+1) Do NOT break or rewrite core functionality. Preserve all routes, endpoints, DB schema, business logic, scoring logic, and data contracts.
+2) UI refactor only. You may adjust frontend code structure/components/styles, but do not change API behavior or response shapes.
+3) Keep all current user flows working: wardrobe entry (text fields), today outfits, explanation section, feedback capture, aesthetic health.
+4) Do not introduce new features beyond what is required to match the screenshots.
+5) Avoid large refactors. Touch the minimum number of files needed.
+6) After every change, ensure the app still runs and passes manual checks.
+
+INPUTS I WILL PROVIDE:
+- Lovable screenshots (source of truth for layout, spacing, typography scale, component shapes, and interaction patterns).
+- The screenshot color scheme is the base palette. Keep it.
+- Add subtle accents of WINE RED and ROYAL GREEN (as secondary accents) WITHOUT ruining the luxury feel.
+
+DESIGN REQUIREMENTS (Luxury UI):
+- Match the screenshots as closely as possible: layout, hierarchy, paddings, radii, shadows, typography sizes.
+- Premium, calm, minimal, high-end.
+- No tacky gradients, no neon, no clutter.
+- Add wine red + royal green only as tasteful accents (e.g., small highlights, icons, chips, borders, micro-elements) — never as dominant backgrounds.
+- Keep accessibility: readable contrast, consistent spacing, mobile-first.
+
+COLOR PALETTE RULE:
+- Primary palette = screenshot palette (must remain dominant).
+- Secondary accents:
+  - Wine red: used sparingly for emphasis (e.g., CTA hover, selected state, small underline).
+  - Royal green: used sparingly for positive/confirm states (e.g., “Aesthetic Health” good status, success chips).
+- Provide final palette tokens in a single file (e.g., Tailwind config or CSS variables).
+
+IMPLEMENTATION APPROACH:
+- Create a “design system layer”:
+  - Tailwind theme tokens (colors, radii, shadow, typography scale)
+  - Reusable components: Button, Card, SectionHeader, Badge/Chip, Input, Slider
+- Rebuild screens to match screenshots:
+  - Home (value prop + Today’s Couture CTA + Wardrobe Intelligence CTA + premium hero)
+  - Wardrobe (structured text inputs + garment list)
+  - Today (outfits list, score breakdown, “Why this works” explanation, feedback)
+- Preserve all existing API calls; only change presentation.
+
+WORKFLOW / MILESTONES:
+M0) Read existing project structure and identify current pages/components. Confirm what is already functional.
+M1) Add theme tokens (CSS vars/Tailwind config) based on screenshots, plus wine red + royal green accents.
+M2) Rebuild shared UI components (buttons/cards/forms) to match screenshot style.
+M3) Rebuild Home screen to match screenshot layout.
+M4) Rebuild Wardrobe screen to match screenshot layout.
+M5) Rebuild Today’s Couture screen to match screenshot layout.
+M6) Final polish: spacing consistency, hover/active states, subtle motion, mobile responsiveness.
+
+AFTER EACH MILESTONE, OUTPUT:
+1) What changed
+2) Files touched
+3) How to run (npm run dev)
+4) Manual test checklist verifying functionality still works:
+   - Add garment
+   - List garments
+   - Generate today’s outfits
+   - View explanation
+   - Submit feedback
+   - See aesthetic health
+
+IMPORTANT:
+- Garment inputs remain regular structured text fields (name, category, color family, formality slider, silhouette, season). No photo features.
+- If a screenshot element implies a feature that doesn’t exist, implement only the UI shell for it (static placeholder) OR adapt the layout to existing features without inventing new backend logic.
+
+START NOW:
+Begin with M0. Inspect the repo, summarize existing functional parts, and wait for me to upload the Lovable screenshots. Do not start redesign until you have screenshots, but prepare the plan and identify which files will likely change.

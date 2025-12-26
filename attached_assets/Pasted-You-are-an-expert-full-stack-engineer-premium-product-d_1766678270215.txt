@@ -1,0 +1,80 @@
+You are an expert full-stack engineer + premium product designer building an MVP PWA called “D-Couture” (aesthetic operating system). This is NOT a shopping app, NOT a trend app, NOT a chatbot stylist.
+
+GOAL (MVP):
+Build a premium-feeling installable PWA + minimal backend that:
+1) Lets the user add garments (photo optional; start with manual structured entry)
+2) Stores garments as structured objects
+3) Computes a simple wardrobe pairing graph (compatibility scores)
+4) Generates “Today’s Couture” (1–3 deterministic outfits + 1 elevated variant) using scoring rules (color harmony, silhouette balance, context fit, novelty)
+5) Produces an LLM explanation layer that ONLY narrates decisions (never chooses garments)
+6) Collects feedback (worn? how it felt?) and shows an “Aesthetic Health” signal (simple MVP metric)
+
+PRODUCT PRINCIPLES:
+- Identity > trends
+- Structure > infinite choices
+- Deterministic planning decides; LLM explains
+- PAM (Personal Aesthetic Model) updates slowly (weekly in future; MVP can simulate)
+- Premium luxury look: calm, minimal, high-contrast typography, generous spacing, subtle motion
+- Customer retention: daily ritual (“Today’s Couture”), streak/consistency without gamification, gentle reminders, progress signal (“Aesthetic Health”), but no addictive feeds.
+
+TECH CONSTRAINTS (Replit-friendly):
+- Use a monorepo with:
+  /apps/web  (React + Vite + Tailwind + PWA)
+  /apps/api  (Node.js + Fastify or Express)
+- Use SQLite for MVP (Prisma ORM) so it runs in Replit without external DB.
+- Provide an .env.example
+- Add seed script for demo garments.
+- All features must run with one command at repo root: npm run dev
+- Include simple unit tests OR at least a test checklist per milestone.
+
+DELIVERABLES:
+You must build in small milestones. After EACH milestone, you MUST output:
+1) What you implemented (brief)
+2) Files changed/added
+3) Commands to run
+4) Manual test checklist
+5) Known limitations (if any)
+
+MILESTONE PLAN (DO IN ORDER):
+M1) Project scaffold + premium UI shell + API health check
+M2) Garment CRUD (manual entry) + clean wardrobe list UI
+M3) Wardrobe compatibility scoring + store edges + visualize compatibility (simple)
+M4) Outfit generator endpoint + “Today’s Couture” page (deterministic) + elevated variant
+M5) LLM explanation endpoint (locked-down prompt) + explanation UI
+M6) Feedback capture + “Aesthetic Health” metric + lightweight retention UI (daily ritual)
+
+UI/UX REQUIREMENTS (PREMIUM LUXURY):
+- Color palette: monochrome base (black/white) with ONE accent color used sparingly (gold-like tone but not tacky)
+- Typography: elegant serif for headings + clean sans for body (use Google Fonts)
+- Components: glassy cards, subtle shadows, rounded corners, lots of whitespace
+- Microinteractions: subtle hover, press, fade/slide transitions (no flashy animations)
+- Layout: mobile-first; feels like a luxury brand companion
+- Copy tone: concise, couture-like, not salesy (“Today’s Couture”, “Wardrobe Intelligence”, “Aesthetic Health”)
+
+RETENTION + MARKETING (WITHOUT CHEAP TRICKS):
+- On home screen: a calm hero section describing the value proposition in 1–2 lines.
+- A “Daily Couture” ritual entry point with a date stamp.
+- A light “progress” module: aesthetic health trend (even if mocked first).
+- A “Why” explanation section under each outfit (the LLM narration).
+- NO shopping links, NO trends feed, NO infinite scroll.
+
+SCORING LOGIC (MVP SIMPLE BUT EXPLAINABLE):
+- Each garment has: category, color_family, formality(0–1), silhouette, season(optional)
+- Compatibility score between two garments:
+  0.4*colorHarmony + 0.3*formalityMatch + 0.3*silhouetteBalance
+- Outfit score aggregates pairwise compatibility + context fit + novelty penalty
+- Provide a score breakdown per outfit in UI.
+
+LLM EXPLANATION (SAFE + CONTROLLED):
+- The LLM receives ONLY structured JSON: outfit items + score breakdown + PAM traits (MVP can be fixed defaults).
+- It must generate couture-style reasoning explaining WHY the outfit works.
+- It must NEVER suggest alternative purchases or additional items.
+- If OpenAI key missing, fallback to a deterministic template explanation.
+
+IMPORTANT:
+- Do not bloat. No auth required for MVP; use a single demo user.
+- Keep code clean and commented.
+- Do not introduce unused abstractions.
+- Do not change earlier milestones unless necessary to fix a bug.
+
+Start now with M1. Build the scaffold and premium UI shell first.

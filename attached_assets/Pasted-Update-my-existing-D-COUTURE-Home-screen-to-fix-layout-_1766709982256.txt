@@ -1,0 +1,58 @@
+Update my existing D-COUTURE Home screen to fix layout + luxury styling issues. Keep the same content and behavior, but correct spacing, alignment, and button design. Do not change routes or add navigation.
+
+CURRENT ISSUES TO FIX
+1) The profile dot must NOT be on the far right. It should sit immediately after the “D-COUTURE” text in the top-left, like: “D-COUTURE  •”. There should be nothing on the right side of the top bar.
+2) The center content feels too large and the whitespace is unbalanced. Make the composition feel centered with equal breathing room on all sides.
+3) The “Begin Experience” button is too far below creating awkward empty space. Bring it up and make spacing consistent.
+4) Button styling is not luxury. Add refined gold accents and better interaction states.
+5) Add a subtle shadow/border to the center block (like a couture placard), not a heavy card.
+
+LAYOUT REQUIREMENTS
+- Use a 3-row layout with full viewport height (100svh):
+  Row 1: Top bar (fixed height, padding)
+  Row 2: Center content (true center)
+  Row 3: Bottom action area (not stuck to the bottom; should sit comfortably below center content)
+- No scrolling on this screen.
+- Respect mobile safe areas (use env(safe-area-inset-bottom) and padding).
+
+TOP BAR
+- Left-aligned cluster only:
+  “D-COUTURE” (small caps or small uppercase + letter spacing)
+  A small dot immediately after the text (8–10px circle, filled).
+- Remove the right-side dot completely.
+
+CENTER BLOCK (make it feel smaller + premium)
+- Wrap the centered content in a subtle “placard” container:
+  max-width: 640px (or less on mobile)
+  width: calc(100% - 48px) on mobile
+  padding: 40px 28px (mobile) / 56px 44px (desktop)
+  border: 1px solid rgba(200,162,74,0.28)  (gold hairline)
+  box-shadow: 0 18px 60px rgba(0,0,0,0.08)  (very soft)
+  border-radius: 18–24px
+  background: slightly lighter than page background (subtle difference)
+- Keep the typography the same text, but tighten the spacing:
+  Reduce letter spacing slightly on the huge title if needed
+  Reduce vertical gaps between title/subtext/philosophy markers
+
+BUTTON AREA (move up + luxury)
+- Place the button area below the placard with a consistent gap (24–36px), not at the extreme bottom.
+- Button styling:
+  Full-width within the placard width
+  Height ~52–56px
+  Border: 1px solid #C8A24A
+  Text: small caps/uppercase with tracking
+  Subtle hover/tap: background becomes rgba(200,162,74,0.08) and shadow/glow increases slightly
+  Add a very subtle inner highlight (like inset shadow) if possible
+- Keep behavior:
+  State A: one button “Begin Experience”
+  State B: replace with two stacked buttons:
+    Primary: “Enter Your Wardrobe” (gold border + stronger fill)
+    Secondary: “Curate Today’s Look” (outline only)
+
+COLOR THEME (choose whichever matches current)
+- If background is warm off-white (#F6F4F1), use near-black text (#0B0B0B) and gold accents (#C8A24A).
+- Ensure contrast is accessible.
+
+DELIVERABLE
+- Modify the existing Home component and any local CSS/Tailwind classes needed.
+- Show the updated code for the Home screen.

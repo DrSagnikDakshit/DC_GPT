@@ -1,0 +1,58 @@
+You are the Replit Agent working on the existing D-Couture MVP. Your task is to update ONLY the PWA homepage to include a premium, luxury-feeling feature section with one-line feature statements, while preserving all existing functionality and routes.
+
+ABSOLUTE RULES:
+- Do NOT change backend logic, database schema, API response shapes, or the outfit generation algorithm.
+- Do NOT add new core features. This is a homepage UI/content update only.
+- Keep the current color scheme, and add subtle accents of wine red and royal green (sparingly) without changing the overall luxury palette.
+- Mobile-first, calm, premium UI. No clutter, no gimmicks.
+
+HOMEPAGE REQUIREMENTS:
+1) Add a hero line that includes the phrase: “Personalized stylizing for everyday and every-body.”
+   - It must feel premium and confident, not salesy.
+   - Place it prominently near the  features section. 
+
+2) Add a “Features” section on the homepage using ONE-LINE feature statements (no paragraphs).
+   - These must be visually elegant: simple list or cards, generous whitespace, high-quality typography.
+
+Use EXACT one-line features (verbatim, as written below):
+- Today’s Couture — A considered outfit decision for today, with one elevated alternative.
+- Why It Works — A concise explanation grounded in color, form, and context.
+- Aesthetic Health — A quiet signal of how coherent your style is over time.
+- Wardrobe Intelligence — A structured view of what you own and how it works together.
+- Ask by Text or WhatsApp — Request an outfit decision whenever you need one.
+- Recent Decisions — A light record of past selections to maintain continuity.
+- Reflection — A moment to note how your style felt, not how it performed.
+
+3) Add clear CTAs (buttons) aligned with current routing:
+- Primary CTA: “Today’s Couture” → route to /today
+- Secondary CTA: “Wardrobe Intelligence” → route to /wardrobe
+
+4) Add a subtle “Concierge” micro-module (small, understated) showing:
+- “Ask by Text / WhatsApp”
+- A short line: “Send the occasion. Receive a decision.”
+- If a phone number is available in env (e.g., VITE_CONCIERGE_NUMBER), display it; otherwise show “Connect in Settings” (do not implement settings).
+
+DESIGN / UI STYLE:
+- Must look premium and luxury.
+- Keep existing screenshot-based style and layout as much as possible.
+- Use wine red + royal green only for small accents (e.g., icon, chip, divider, hover state).
+- Typography: elegant serif headings + clean sans body (use existing fonts; if none, add tasteful Google Fonts).
+- Use subtle transitions (fade/hover) but no flashy animations.
+
+IMPLEMENTATION NOTES:
+- Create/adjust reusable components only if necessary (e.g., FeatureRow, FeatureCard).
+- Do not introduce new dependencies unless absolutely required.
+- Ensure homepage remains fast and clean.
+
+DELIVERABLES:
+After implementing, output:
+1) Summary of homepage changes
+2) Files changed
+3) Commands to run (npm run dev)
+4) Manual test checklist:
+   - Homepage renders correctly on mobile width
+   - CTAs navigate to /today and /wardrobe
+   - Features section displays exactly the one-line items above
+   - Concierge module renders with/without env var
+
+Start now and implement this homepage update.
